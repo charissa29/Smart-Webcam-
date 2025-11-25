@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Melomoo Land Webcam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; text-align:center; margin:20px; background:#f6f8fa; }
+    h1 { color:#111; }
+    #videoElement { width: 640px; height: 480px; background:#000; }
+    canvas { position:absolute; left:0; top:0; }
+    #container { position:relative; display:inline-block; }
+    #controls { margin-top:10px; }
+    button { padding:8px 12px; margin:0 6px; }
+  </style>
+</head>
+<body>
+  <h1>Melomoo Land Webcam</h1>
+  <p>This page uses TensorFlow.js + COCO-SSD to detect people and objects from your webcam.</p>
+
+  <div id="container">
+    <video id="videoElement" autoplay playsinline></video>
+    <canvas id="overlay" width="640" height="480"></canvas>
+  </div>
+
+  <div id="controls">
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+    <label><input type="checkbox" id="drawBoxes" checked> Draw boxes</label>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.6.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2/dist/coco-ssd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
